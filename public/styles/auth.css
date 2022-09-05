@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 400px;
+  max-width: 30rem;
+  margin: var(--space-8) auto;
+  padding: var(--space-4);
+  background-color: rgba(248, 241, 241, 0.994);
+  border-radius: var(--border-radius-medium);
+  text-align: center;
+}
+
+form a {
+  color: rgb(92, 75, 75);
+  font-weight: 700;
+}
+
+form a:hover,
+form a:active {
+  color: rgb(9, 9, 9);
+}
+
+/* .signup-image {
+  height: auto;
+  width: auto;
+} */
