@@ -14,6 +14,7 @@
             <h1>Login To Your Account</h1>
 
             <form action="/login" method="POST">
+                <input type="hidden" name="_csrf" value="<%= locals.csrfToken %> ">
 
                 <p>
                     <label for="email">E-mail</label>

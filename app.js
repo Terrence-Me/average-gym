@@ -1,8 +1,12 @@
 const path = require('path');
 
+const csrf = require('csurf');
 const express = require('express');
+const expressSession = require('express-session');
 
+const createSessionConfig = require('./config/session');
 const db = require('./data/database');
+const csrfMiddleware = require('./middlewares/csrf-token');
 
 const authRoutes = require('./routes/auth-routes');
 
@@ -13,6 +17,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
+
+const sessionConfig = createSessionConfig();
+
+app.use(expressSession(sessionConfig));
+app.use(csrf());
+app.use(csrfMiddleware);
 
 app.use(authRoutes);
 
