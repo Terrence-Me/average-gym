@@ -10,6 +10,10 @@ class User {
     this.lastName = lastName;
   }
 
+  getUserWithEmail() {
+    return db.getDb().collection('users').findOne({ email: this.email });
+  }
+
   async signup() {
     const hashedPassward = await bcrypt.hash(this.password, 12);
 
@@ -20,6 +24,10 @@ class User {
       lastName: this.lastName,
     });
     console.log(result);
+  }
+
+  comparePassward(hashedPassward) {
+    return bcrypt.compare(this.password, hashedPassward);
   }
 }
 

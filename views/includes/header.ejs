@@ -3,6 +3,12 @@
         <a href="/"> Average Gym</a>
     </div>
     <nav>
-        <a href=""></a>
+        <ul>
+            <% if (locals.isAuth) { %>
+            <li>Logout</li>
+            <% } %>
+            <li></li>
+            <li></li>
+        </ul>
     </nav>
 </header>
